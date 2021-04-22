@@ -49,13 +49,11 @@ Once the data has been processed and meets the validation requirements, it shoul
 request (don't use SMTP) to one of the two services:
 
 - Mailgun
-    - Main Website: [www.mailgun.com](http://www.mailgun.com/)
-    - Simple Send
-      Documentation: [https://documentation.mailgun.com/en/latest/quickstart-sending.html#how-to-start-sending-email](https://documentation.mailgun.com/en/latest/quickstart-sending.html#how-to-start-sending-email)
+    - [Main Website](http://www.mailgun.com/)
+    - [Simple Send Documentation](https://documentation.mailgun.com/en/latest/quickstart-sending.html#how-to-start-sending-email)
 - Sendgrid
-    - Main website: [www.sendgrid.com](http://www.sendgrid.com/)
-    - Getting Started
-      Documentation: [https://sendgrid.com/docs/for-developers/sending-email/api-getting-started/](https://sendgrid.com/docs/for-developers/sending-email/api-getting-started/)
+    - [Main website](http://www.sendgrid.com/)
+    - [Getting Started Documentation](https://sendgrid.com/docs/for-developers/sending-email/api-getting-started/)
 
 Both services are free to try and are painless to sign up for, so please register your own test accounts for each.
 
