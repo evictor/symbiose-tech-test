@@ -1,0 +1,26 @@
+version: "3.9"
+
+x-image-common:
+  &build-common
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: symbiose/take-home/zeke/gcp-function-runtime
+
+x-dev-volumes:
+  &dev-volumes
+  - ./app:/root/app
+  - ./test:/root/test
+
+services:
+  dev:
+    <<: *build-common
+    volumes: *dev-volumes
+    profiles:
+      - dev
+    command:
+      - "--target"
+      - "hello"
+      - "--debug"
+    ports:
+      - "8080:8080"
