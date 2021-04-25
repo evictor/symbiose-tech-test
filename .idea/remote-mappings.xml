@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="python@docker-compose://[/Users/zeke/code/symbiose/software-engineering-take-home/docker-compose.yml]:dev/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$/app" remote-root="/root/app" />
+            </list>
+          </settings>
+        </remote-mappings>
+      </list>
+    </list>
+  </component>
+</project>

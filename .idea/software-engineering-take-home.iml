@@ -11,7 +11,10 @@
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
     </content>
-    <orderEntry type="jdk" jdkName="Remote Python 3.8.9 Docker Compose (dev at [/Users/zeke/code/symbiose/software-engineering-take-home/docker-compose.yml])" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Symbiose challenge [docker-compose Python]" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="PackageRequirementsSettings">
+    <option name="versionSpecifier" value="Strong equality (==x.y.z)" />
   </component>
 </module>
