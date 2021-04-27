@@ -1,4 +1,5 @@
 from app.functions.http.response.api.error import ApiErrorResponse
+from app.functions.http.send_email.input import SendEmailParams
 
 
 def send_email(request):
@@ -17,7 +18,7 @@ def send_email(request):
     elif not request.is_json:
         return ApiErrorResponse(400, 'Request input must be JSON')
 
-    # TODO: validate input
+    inp = SendEmailParams.validate(request.json)
     # TODO: send email w/ failover
 
     return 'TODO'

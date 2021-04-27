@@ -33,3 +33,43 @@ Content-Type: text/plain
 foobar
 
 ###
+
+# 422
+POST http://localhost:8080/email
+Content-Type: application/json
+
+{}
+
+###
+
+# 422
+# TODO: Error messages aren't quite right; param names aren't appearing from jsonschema ValidationError.message
+POST http://localhost:8080/email
+Content-Type: application/json
+
+{
+  "to": "",
+  "to_name": "",
+  "from": "",
+  "from_name": "",
+  "subject": "",
+  "body": ""
+}
+
+###
+
+# 422
+# TODO: Test input parameter values
+POST http://localhost:8080/email
+Content-Type: application/json
+
+{
+  "to": "foobar",
+  "to_name": "Some Name",
+  "from": "baz",
+  "from_name": "Other Name",
+  "subject": "A Subject",
+  "body": "A Body"
+}
+
+###
