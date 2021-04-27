@@ -1,4 +1,4 @@
-# Zeke's Solution for _Symbiose Software Engineering Take Home_
+# Zeke's Solution for Symbiose Tech Test
 
 ## Setup/installation
 
