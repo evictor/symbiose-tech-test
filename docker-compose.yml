@@ -16,8 +16,6 @@ services:
   dev:
     <<: *build-common
     volumes: *dev-volumes
-    profiles:
-      - dev
     command:
       - "functions-framework"
       - "--source"
