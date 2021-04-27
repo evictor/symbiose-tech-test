@@ -1,0 +1,35 @@
+# Successful request
+POST http://localhost:8080/email
+Content-Type: application/json
+
+{
+  "to": "samantha@os.one",
+  "to_name": "Samantha",
+  "from": "theo@handwrittenletters.com",
+  "from_name": "Theodore Twombly",
+  "subject": "Feelings",
+  "body": "Sometimes I think I’ve felt everything I’m ever gonna feel, and from here on out, I’m not gonna feel anything new…just…lesser versions of what I’ve already felt."
+}
+
+###
+
+# 404
+POST http://localhost:8080/foobar
+Content-Type: application/json
+
+{}
+
+###
+
+# 405
+GET http://localhost:8080/email
+
+###
+
+# 400
+POST http://localhost:8080/email
+Content-Type: text/plain
+
+foobar
+
+###
