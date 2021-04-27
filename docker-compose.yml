@@ -19,7 +19,7 @@ services:
     command:
       - "functions-framework"
       - "--source"
-      - "functions/http/send_email/__init__.py"
+      - "app/functions/http/send_email/__init__.py"
       - "--target"
       - "send_email"
       - "--debug"

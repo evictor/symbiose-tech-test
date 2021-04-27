@@ -8,5 +8,5 @@ RUN python -m compileall
 
 EXPOSE 8080
 
-WORKDIR /root/app
+WORKDIR /root
 CMD echo 'No relevant default run command; see docker-compose.yml for run commands'
