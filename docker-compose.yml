@@ -19,8 +19,13 @@ services:
     profiles:
       - dev
     command:
+      - "functions-framework"
+      - "--source"
+      - "functions/http/send_email/__init__.py"
       - "--target"
-      - "hello"
+      - "send_email"
       - "--debug"
     ports:
       - "8080:8080"
+    environment:
+      - PYTHONPATH=.

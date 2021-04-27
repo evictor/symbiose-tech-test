@@ -9,4 +9,4 @@ RUN python -m compileall
 EXPOSE 8080
 
 WORKDIR /root/app
-ENTRYPOINT ["functions-framework"]
+CMD echo 'No relevant default run command; see docker-compose.yml for run commands'

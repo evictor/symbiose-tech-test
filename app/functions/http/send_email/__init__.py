@@ -1,4 +1,4 @@
-def hello(request):
+def send_email(request):
     """
     HTTP POST Google Cloud Function for the send email action
 
