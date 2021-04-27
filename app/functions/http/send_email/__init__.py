@@ -1,5 +1,12 @@
 from app.functions.http.response.api.error import ApiErrorResponse
 from app.functions.http.send_email.input import SendEmailParams
+from app.service.notification.email import SendGridEmailer, MailgunEmailer
+from app.service.notification.notifier_with_failover import NotifierWithFailover
+
+emailer_queue = NotifierWithFailover([
+    SendGridEmailer(),
+    MailgunEmailer(),
+])
 
 
 def send_email(request):
@@ -19,6 +26,7 @@ def send_email(request):
         return ApiErrorResponse(400, 'Request input must be JSON')
 
     inp = SendEmailParams.validate(request.json)
-    # TODO: send email w/ failover
+    result = emailer_queue.notify(inp.sender, inp.recipient, inp.message)
 
-    return 'TODO'
+    # TODO: NotifyResult needs to serialize
+    return result

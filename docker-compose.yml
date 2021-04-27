@@ -25,6 +25,8 @@ services:
       - "--debug"
     ports:
       - "8080:8080"
+    env_file:
+      - ./env/dev.env
     environment:
       - PYTHONPATH=.
       - PYTHONUNBUFFERED=1
