@@ -50,6 +50,7 @@ implemented:
 
 - referenced `markdownify` lib would be used to convert HTML `body` to Markdown plain text
 - referenced `requests` lib would be used to send the POST requests
+- proper tests; the sample HTTP requests included can quickly be spun into automated tests in PyCharm
 
 ## Choice of language, framework, and libraries
 
