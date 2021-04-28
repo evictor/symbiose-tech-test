@@ -26,3 +26,27 @@ curl -X POST --location "http://localhost:8080/email" \
           \"body\": \"Sometimes I think I’ve felt everything I’m ever gonna feel, and from here on out, I’m not gonna feel anything new…just…lesser versions of what I’ve already felt.\"
         }"
 ```
+
+## The Rundown
+
+The sending of emails won't actually take place. Sendgrid and Mailgun APIs are connected, the programmatic POSTs are
+written, and the failover algorithm is implemented, but the requests are not actually sent. I got a little carried away
+and realized I was spending too much time on this, so I am submitting this in its curent state. Here's what _is_
+implemented:
+
+- Runtime in Google Cloud Function (i.e. serverless model) which would allow for elastic scaling and billing for
+  time-used only with no need to manage infrastructure
+- Robust failover/notif system; the `NotifierWithFailover` service can handle any number of failover services (not just
+  the two email services implemented, Sendgrid and Mailgun) that would be attempted in order as prior services fail with
+  the most recently succeeding service promoted to "active" service in use. The object model is simple to understand
+  with the failover notifier itself being just another kind of `Notifier`:
+  
+   ![notifier-services.png](notifier-services.png)
+
+- Input validation requires minimal code—managed via `jsonschema`—and occurs cumulatively so a caller can receive and
+  address all input errors at once
+
+### TODO
+
+- referenced `markdownify` lib would be used to convert HTML `body` to Markdown plain text
+- referenced `requests` lib would be used to send the POST requests

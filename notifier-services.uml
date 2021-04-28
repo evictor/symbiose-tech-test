@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#/Users/zeke/code/symbiose/software-engineering-take-home/app/service</OriginalElement>
+  <nodes>
+    <node x="0.0" y="232.0">service.notification.email.MailgunEmailer</node>
+    <node x="685.75" y="0.0">service.notification.Notifier</node>
+    <node x="659.0" y="232.0">service.notification.email.SendGridEmailer</node>
+    <node x="394.5" y="105.0">service.notification.webhook.WebhookNotifier</node>
+    <node x="923.5" y="105.0">service.notification.notifier_with_failover.NotifierWithFailover</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="service.notification.webhook.WebhookNotifier" target="service.notification.Notifier" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="649.0" y="80.0" />
+      <point x="915.25" y="80.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="service.notification.email.MailgunEmailer" target="service.notification.webhook.WebhookNotifier" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="319.5" y="207.0" />
+      <point x="649.0" y="207.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="service.notification.email.SendGridEmailer" target="service.notification.webhook.WebhookNotifier" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="978.5" y="207.0" />
+      <point x="649.0" y="207.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="service.notification.notifier_with_failover.NotifierWithFailover" target="service.notification.Notifier" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="1181.5" y="80.0" />
+      <point x="915.25" y="80.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6156639004149378" showDependencies="false" x="976.0" y="239.52148272957032" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+</Diagram>
+

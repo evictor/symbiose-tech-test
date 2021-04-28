@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide empty members
+
+abstract class Notifier {
+    + {abstract} notify() -> NotifyResult
+}
+
+class WebhookNotifier {
+    # url: str
+    # build_request() -> Request
+    + notify() -> NotifyResult
+}
+
+class NotifierWithFailover {
+    # notifiers: List[Notifier]
+    + notify() -> NotifyResult
+}
+
+class MailgunEmailer {
+    # api_key: str
+    + notify() -> NotifyResult
+}
+
+class SendGridEmailer {
+    # api_key: str
+    + notify() -> NotifyResult
+}
+
+Notifier <|-- WebhookNotifier
+WebhookNotifier <|-- MailgunEmailer
+WebhookNotifier <|-- SendGridEmailer
+
+Notifier <|-- NotifierWithFailover
+Notifier -o NotifierWithFailover
+
+@enduml
