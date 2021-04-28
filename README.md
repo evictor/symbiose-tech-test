@@ -50,3 +50,14 @@ implemented:
 
 - referenced `markdownify` lib would be used to convert HTML `body` to Markdown plain text
 - referenced `requests` lib would be used to send the POST requests
+
+## Choice of language, framework, and libraries
+
+I chose Python and GCP runtime because I thought this service made a lot of sense in a serverless model, and as far as I
+know Symbiose uses Python and GCP in house. I don't have much GCP or serverless experience, so I liked the idea of using
+this tech test as an opportunity to become more familiar with that paradigm.
+
+Flask framework for handling the incoming HTTP request is implied by GCP, but I probably would have chosen it anyway due
+to its (and the spec's) simplicity.
+
+I used `jsonschema` which helped formulate validations more quickly than implementing "from scratch".
